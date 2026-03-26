@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Your Page Title</title>
+  <meta name="description" content="This is a preview description for Facebook and social sharing." />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Your Page Title" />
+  <meta property="og:description" content="This is a preview description for Facebook and social sharing." />
+  <meta property="og:url" content="https://your-vercel-domain.vercel.app/" />
+  <meta property="og:image" content="1.jpg" />
+  <meta property="og:image:secure_url" content="1.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="1200" />
+
+  <!-- Optional Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Your Page Title" />
+  <meta name="twitter:description" content="This is a preview description for social sharing." />
+  <meta name="twitter:image" content="1.jpg" />
+
+  <meta http-equiv="refresh" content="10;url=https://example.com" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #222;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 500px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      padding: 24px;
+      text-align: center;
+    }
+
+    .square-image {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 14px;
+      display: block;
+      margin-bottom: 20px;
+      background: #e9eef5;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: 28px;
+    }
+
+    p {
+      margin: 0 0 12px;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    .countdown {
+      font-weight: bold;
+      color: #e63946;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 12px 18px;
+      background: #1877f2;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="1.jpg"Preview Image" class="square-image" />
+
+    <h1>Welcome</h1>
+    <p>This page will automatically redirect after <span id="timer" class="countdown">10</span> seconds.</p>
+    <p>If redirect does not work, use the button below.</p>
+
+    <a class="btn" href="https://example.com">Go Now</a>
+  </div>
+
+  <script>
+    const redirectUrl = "https://example.com";
+    let timeLeft = 10;
+
+    const timer = document.getElementById("timer");
+
+    const countdown = setInterval(() => {
+      timeLeft--;
+      if (timer) timer.textContent = timeLeft;
+
+      if (timeLeft <= 0) {
+        clearInterval(countdown);
+        window.location.href = redirectUrl;
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
